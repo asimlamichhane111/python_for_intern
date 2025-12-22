@@ -1,0 +1,15 @@
+A modular,CLI-based job porta system built using core Python.
+This project demonstrates OOP, File handeling, authentication ,Role based access control ,
+logging and resting.
+
+##Features
+-User registration and authentication
+-Role-based access control
+-Job posting and application system
+-Persistent storage using JSON
+-Logging and error handeling
+-Unit testing
+
+##Tech Stack
+-Python 3.x
+-Core Python(No frameworks)
