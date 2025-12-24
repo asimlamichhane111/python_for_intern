@@ -1,8 +1,7 @@
 class User:
-    def __init__(self,username,email,role='Job Seeker'):
+    def __init__(self,username,email):
         self.username=username
         self.email=email
-        self.role=role
         self._password=None
 
     def set_password(self,password):
@@ -13,5 +12,8 @@ class User:
     def check_password(self,password):
         return self._password==password
     
+    def get_role(self):
+        return self.__class__.__name__
+    
     def display_info(self):
-        return f"Username: {self.username}, Email: {self.email}, Role:{self.role}"
+        return f"{self.get_role()} | {self.username} | {self.email}"
