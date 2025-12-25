@@ -6,6 +6,7 @@ from models.job_seeker import JobSeeker
 from config import DATA_DIR
 
 USER_FILE=os.path.join(DATA_DIR,"users.json")
+# print(USER_FILE)
 
 def load_users():
     if not os.path.exists(USER_FILE):
@@ -16,15 +17,20 @@ def load_users():
     users=[]
     for item in data:
         role=item['role']
+        username=item['username']
+        email=item['email']
+
+        password=item['password']
         if role=="admin":
-            user=Admin(item['username'],item['email'])
+
+            user=Admin(username,email)
         elif role=="employer":
-            user=Employer(item['username'],item['email'])
+            user=Employer(username,email)
         elif role=="job_seeker":
-            user=JobSeeker(item['username'],item['email'])
+            user=JobSeeker(username,email)
         else:
             continue
-        user.set_password(item["password"])
+        user.set_password(password)
         users.append(user)
     return users
 

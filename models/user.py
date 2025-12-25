@@ -1,4 +1,5 @@
 class User:
+    role="user"
     def __init__(self,username,email):
         self.username=username
         self.email=email
@@ -13,7 +14,7 @@ class User:
         return self._password==password
     
     def get_role(self):
-        return self.__class__.__name__
+        return self.role
     
     def display_info(self):
         return f"{self.get_role()} | {self.username} | {self.email}"
